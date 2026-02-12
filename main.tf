@@ -23,7 +23,7 @@ resource "aws_instance" "ec2_instance" {
      instance_type = "t3.micro"
      key_name = data.aws_key_pair.my_key.key_name
      vpc_security_group_ids = [aws_security_group.task1.id]
-     associate_public_ip = true
+     associate_public_ip_address = true
 
      tags = { 
        name = "web-server"
@@ -35,7 +35,7 @@ resource "aws_instance" "ec2_instance1" {
       instance_type = "t3.micro"
       key_name = data.aws_key_pair.my_key.key_name
       vpc_security_group_ids = [aws_security_group.task1.id]
-      associate_public_ip = true
+      associate_public_ip_address = true
 
       tags = {
         name = "db-server"
