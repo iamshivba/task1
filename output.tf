@@ -20,5 +20,5 @@ output "instance_id" {
 
 output "security_group_id" {
      description = "security group id"
-     value = "aws_security_group.task.id
+     value = "aws_security_group.task1.id
 }
