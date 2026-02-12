@@ -38,6 +38,6 @@ resource "aws_security_group" "task1" {
        cidr_blocks = ["0.0.0.0/0"]
     }
        tags = {
-         name = "task"
+         Name = "task"
      }
 }
