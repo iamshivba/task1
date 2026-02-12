@@ -1,12 +1,12 @@
 resource "aws_security_group" "task1" {
-    name = task
-    description = allow SSH, HTTP and HTTPS traffic"
+    name = "task"
+    description = "allow SSH, HTTP and HTTPS traffic"
 
     ingress {
      description = "SSH"
      to_port = 22
      from_port = 22
-     protocil ="tcp"
+     protocol ="tcp"
      cidr_blocks = ["0.0.0.0/0"]
   }
     ingress {
@@ -30,7 +30,7 @@ resource "aws_security_group" "task1" {
       protocol = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
 }
-      engress {
+      egress {
        description = "allow all tarffic rules"
        to_port = 0
        from_port = 0
