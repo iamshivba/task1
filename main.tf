@@ -21,8 +21,8 @@ data "aws_key_pair" "my_key" {
 resource "aws_instance" "ec2_instance" {
      ami = data.aws_ami.linux_ami.id
      instance_type = "t3.micro"
-     key_name = date.aws_key_pair.my_key.key_name
-     vpc_security_group_ids = [aws_security_group.task.id]
+     key_name = data.aws_key_pair.my_key.key_name
+     vpc_security_group_ids = [aws_security_group.task1.id]
      associate_public_ip = true
 
      tags = { 
@@ -33,8 +33,8 @@ resource "aws_instance" "ec2_instance" {
 resource "aws_instance" "ec2_instance1" {
       ami = data.aws_ami.linux_ami.id
       instance_type = "t3.micro"
-      key_name = date.aws_key_pair.my_key.key_name
-      vpc_security_group_ids = [aws_security_group.task.id]
+      key_name = data.aws_key_pair.my_key.key_name
+      vpc_security_group_ids = [aws_security_group.task1.id]
       associate_public_ip = true
 
       tags = {
