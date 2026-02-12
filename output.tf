@@ -4,7 +4,7 @@ output "instance_public_ip" {
 }
 
 output "instance_public_ip" {
-    description = "Public ip of all instance"
+    description = "Public ip of all instance1"
     value = "aws_instance.ec2_instance1.public_ip"
 }
 
@@ -14,7 +14,7 @@ output "instance_id" {
 }
 
 output "instance_id" {
-     description = "instance id of all instance"
+     description = "instance id of all instance1"
      value = "aws_instance.ec2_instance1.id"
 }
 
