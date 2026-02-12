@@ -1,5 +1,5 @@
 resource "aws_security_group" "task1" {
-    name = task1
+    name = task
     description = allow SSH, HTTP and HTTPS traffic"
 
     ingress {
@@ -38,6 +38,6 @@ resource "aws_security_group" "task1" {
        cidr_blocks = ["0.0.0.0/0"]
     }
        tags = {
-         name = "task1"
+         name = "task"
      }
 }
