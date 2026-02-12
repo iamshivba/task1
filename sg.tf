@@ -1,5 +1,5 @@
 resource "aws_security_group" "task1" {
-    Name = "task"
+    name = "task"
     description = "allow SSH, HTTP and HTTPS traffic"
 
     ingress {
