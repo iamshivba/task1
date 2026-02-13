@@ -26,7 +26,7 @@ resource "aws_instance" "ec2_instance" {
      associate_public_ip_address = true
 
      tags = { 
-       name = "web-server"
+       Name = "web-server"
      }
 } 
 
@@ -38,7 +38,7 @@ resource "aws_instance" "ec2_instance1" {
       associate_public_ip_address = true
 
       tags = {
-        name = "db-server"
+        Name = "db-server"
     }
 }
 
