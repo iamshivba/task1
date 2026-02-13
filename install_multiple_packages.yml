@@ -1,0 +1,14 @@
+---
+- name: Install_multipal_packages
+  hosts: webservers
+  become: true
+  tasks: 
+    - name: Install following packages
+      dnf:
+        name:
+          - vim
+          - wget
+          - curl-minimal
+          - tree
+          - unzip
+        state: present

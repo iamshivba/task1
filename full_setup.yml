@@ -1,0 +1,52 @@
+---
+- name: system_update
+  hosts: webservers
+  become: true
+  tasks:
+    - name: update all system
+      dnf:
+        name: "*"
+        state: latest
+    - name: Install following packages
+      dnf:
+        name:
+          - vim
+          - wget
+          - curl-minimal
+          - tree
+          - unzip
+        state: present 
+    - name: Install HTTPD on webservers
+      dnf:
+        name: httpd
+        state: present
+    - name: create logs directory
+      file:
+        path: /opt/myapp/logs
+        state: directory
+        mode: 0755
+    
+    - name: Create config directory
+      file: 
+        path: /opt/myapp/config
+        state: directory
+        mode: 0755
+
+    - name: create data directory
+      file:
+        path: /opt/myapp/data
+        state: directory
+        mode: 0755
+    - name: copy a file on the server
+      copy:
+        src: /home/ec2-user/task/hindex.html
+        dest: /var/www/html/hindex.html
+        owner: apache
+        group: apache
+        mode: 0644  
+    - name: start and enable HTTPD
+      service:
+        name: httpd
+        state: started
+        enabled: true
+

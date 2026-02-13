@@ -1,0 +1,22 @@
+---
+- name: directory
+  hosts: webservers
+  become: true
+  tasks:
+    - name: create logs directory
+      file:
+        path: /opt/myapp/logs
+        state: directory
+        mode: 0755
+    
+    - name: Create config directory
+      file: 
+        path: /opt/myapp/config
+        state: directory
+        mode: 0755
+
+    - name: create data directory
+      file:
+        path: /opt/myapp/data
+        state: directory
+        mode: 0755 

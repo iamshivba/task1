@@ -1,0 +1,9 @@
+---
+- name: system_update
+  hosts: webservers
+  become: true
+  tasks:
+    - name: update all system
+      dnf:
+        name: "*"
+        state: latest

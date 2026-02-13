@@ -1,0 +1,12 @@
+---
+- name: copy_file
+  hosts: webservers
+  become: true
+  tasks:
+    - name: copy a file on the server
+      copy:
+        src: /home/ec2-user/task/hindex.html
+        dest: /var/www/html/hindex.html
+        owner: apache
+        group: apache
+        mode: 0644
